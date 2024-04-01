@@ -7,6 +7,6 @@ build_script:
 deploy:
   provider: GitHub
   auth_token:
-    secure: your_encrypted_token
+    secure: YD1leHIRRO+gvFbGjjLxdvUb/iL3pYR3/Edalpxr1RdKzsLbfMf6YHEI2Uum6qbM
   release: my_tag
   artifact: path/to/your/artifact
