@@ -2,6 +2,13 @@ version: 1.2.2#{build}
 image: Visual Studio 2017
 platform: Any CPU
 skip_tags: true
+install:
+- cmd: >-
+    cd %APPVEYOR_BUILD_FOLDER%
+
+    git submodule update --init --recursive
+
+    nuget restore HackusMailCheckerReforged.sln
 build:
   project: HackusMailCheckerReforged.sln
 artifacts:
