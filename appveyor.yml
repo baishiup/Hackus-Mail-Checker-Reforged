@@ -2,25 +2,8 @@ version: 1.2.2#{build}
 image: Visual Studio 2017
 platform: Any CPU
 skip_tags: true
-configuration: Release
-install:
-- cmd: >-
-    cd %APPVEYOR_BUILD_FOLDER%
-
-    git submodule update --init --recursive
-
-    nuget restore HackusMailCheckerReforged.sln
-before_build:
-  - ps: ${env:REV} = (git rev-list --count HEAD)
 build:
-  verbosity: normal
-after_build:
-- cmd: >-
-    move %APPVEYOR_BUILD_FOLDER%\Hackus-Mail-Checker-Reforged\bin\release\chromedriver.exe %APPVEYOR_BUILD_FOLDER%\Hackus-Mail-Checker-Reforged\bin\release\bin\
-
-    move %APPVEYOR_BUILD_FOLDER%\Hackus-Mail-Checker-Reforged\bin\release\geckodriver.exe %APPVEYOR_BUILD_FOLDER%\Hackus-Mail-Checker-Reforged\bin\release\bin\
-
-    7z a Hackus-Mail-Checker-Reforged.zip %APPVEYOR_BUILD_FOLDER%\Hackus-Mail-Checker-Reforged\bin\release\
+  project: HackusMailCheckerReforged.sln
 artifacts:
 - path: Hackus-Mail-Checker-Reforged.zip
   name: Hackus-Mail-Checker-Reforged
