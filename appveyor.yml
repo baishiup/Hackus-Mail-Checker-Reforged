@@ -1,18 +1,3 @@
-version: 1.0.{build}
-image: Visual Studio 2019
-
-build_script:
-  - HackusMailCheckerReforged.sln
-  
-deploy:
-  provider: GitHub
-  auth_token:
-    secure: YD1leHIRRO+gvFbGjjLxdvUb/iL3pYR3/Edalpxr1RdKzsLbfMf6YHEI2Uum6qbM
-  artifact: /.*\.zip/
-  force_update: true
-  tag: 2.2.0#$(REV)
-
-
 version: 1.2.2#{build}
 image: Visual Studio 2017
 platform: Any CPU
