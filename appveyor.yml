@@ -3,10 +3,14 @@ image: Visual Studio 2019
 
 build_script:
   - HackusMailCheckerReforged.sln
-
+  
+artifacts:
+- path: hmc.zip
+  name: hmc
+  
 deploy:
   provider: GitHub
   auth_token:
     secure: YD1leHIRRO+gvFbGjjLxdvUb/iL3pYR3/Edalpxr1RdKzsLbfMf6YHEI2Uum6qbM
-  release: my_tag
-  artifact: path/to/your/artifact
+  artifact: /.*\.zip/
+  tag: 2.2.0#$(REV)
