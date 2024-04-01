@@ -2,7 +2,7 @@ version: 1.0.{build}
 image: Visual Studio 2019
 
 build_script:
-  - Hackus Mail Checker Reforged.sln
+  - HackusMailCheckerReforged.sln
 
 deploy:
   provider: GitHub
